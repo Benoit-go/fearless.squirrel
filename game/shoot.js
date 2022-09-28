@@ -119,7 +119,9 @@ function player_falling()
             && (y > tileY) 
             && (y < mtileY))
         {
-           player1.dead();
+            player1.life --;
+            console.log(player1.life);
+            player1.dead();
         }
     }
 

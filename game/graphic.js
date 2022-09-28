@@ -1,4 +1,4 @@
-function init()
+function init(life)
 {
     // set some camera attributes
     var VIEW_ANGLE = 45,
@@ -25,7 +25,7 @@ function init()
     noGround = [];
     ground = new Ground(0xffffff, WIDTH, HEIGHT, 10);
     
-    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 2), 0);
+    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 2), 0, life);
     scene.add(player1.graphic);
 
 
