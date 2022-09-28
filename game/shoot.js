@@ -62,10 +62,11 @@ function ennemy_collision()
     //collision between bullet and ennemies
     for (var i = 0; i < player1.bullets.length; i++)
     {
-        if (player1.bullets[i].position.x <= ennemy1.position.x + 100  && player1.bullets[i].position.x >= ennemy1.position.x - 100 )
+        if (player1.bullets[i].position.y <= ennemy1.position.y + 5  && player1.bullets[i].position.y >= ennemy1.position.y - 5 )
+        //&&(player1.bullets[i].position.x <= ennemy1.position.x + 50  && player1.bullets[i].position.x >= ennemy1.position.x - 50))
         {
-            scene.remove(player1.bullets[i]);
             scene.remove(ennemy1.graphic);
+            scene.remove(player1.bullets[i]);
             player1.bullets.splice(i, 1);
             i--;
         }
