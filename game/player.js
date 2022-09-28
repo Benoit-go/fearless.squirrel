@@ -23,9 +23,13 @@ var Player = function(name, color, position, direction,life) {
 Player.prototype.dead = function () {
     this.graphic.position.z = this.graphic.position.z-0.1;
         //Nettoyage de la div container
-        $("#container").html("");
-        jQuery('#'+this.name+' >.life').text("Tu es mort !");
-        init(player1.life);
+        if (player1.life <= 0) {
+            $("#container").html("");
+            jQuery('#'+this.name+' >.life').text("Tu es mort !");
+        }
+        else {
+            $("#container").html("");
+        init(player1.life);}
 }
 
 Player.prototype.accelerate = function (distance) {
